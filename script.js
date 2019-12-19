@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    
+
     var latitude;
     var longitude;
     var apiData;
@@ -28,6 +30,7 @@ $(document).ready(function () {
            
            console.log('polution: ' + pollution)
            showInformation(pollution);
+           go();
         });
 
 
@@ -37,6 +40,7 @@ $(document).ready(function () {
 
 function showInformation(pollution){
 
+
     let image;
 
     if(pollution <= 50){
@@ -45,7 +49,23 @@ function showInformation(pollution){
         image = 'square.gltf';
     }
 
-    let html = '<a-asset-item id="fire" src="'+ image +'"></a-asset-item><a-entity gltf-model="#fire" rotation="90 0 0" scale="0.5 0.5 0.5"></a-entity>';
+    let html = '<a-asset-item id="fire" src="'+ image +'"></a-asset-item><a-entity gltf-model="#fire" scale="0.1 0.1 0.1"></a-entity>';
+
+       let infoDiv = '<div style="background:red;border:3px solid green;width: 300px; height: 200px; " id="html-content">'
+    +'C\'est ma div'
+    +'</div>'; 
+
     $('#information').append(html);
+    $('#information').append(infoDiv);
+
+
+    go();
     console.log('fait!');
 }
+
+async function go () {
+    const cnv = await html2canvas(document.querySelector('#html-content'));
+    document.getElementById("image").src = cnv.toDataURL();
+};
+
+
