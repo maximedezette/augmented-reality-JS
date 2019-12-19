@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:overflow="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>TP AR</title>
+    <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
+    <script src='./ar.js/aframe/build/aframe-ar.js'></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src='script.js'></script>
+    <script>
+        THREEx.ArToolkitContext.baseURL = './ar.js/three.js/'
+        ARjs.Context.baseURL = './ar.js/three.js/'
+    </script>
+  <style>
+    body,html {
+      margin: 0;
+      padding: 0;
+    }
+    * {
+      box-sizing: border-box;
+    }
+    canvas {
+      width: 100%;
+      height: calc(100vh - 5px);
+    }
+  </style>
+</head>
+<body style=’margin : 0px; overflow: hidden;’>
+<a-scene embedded arjs>
+  <a-marker preset="hiro" id="information" >
+    <!-- <a-box position='0 0.5 0' material='color: yellow;'></a-box> -->
+
+  </a-marker>
+  <a-entity camera></a-entity>
+</a-scene>
+</body>
+</html>

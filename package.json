@@ -1,0 +1,22 @@
+{
+  "name": "ar-tp",
+  "version": "1.0.0",
+  "description": "Webpack boilerplate for ThreeJS/OpenCV development",
+  "main": "src/index.js",
+  "dependencies": {
+    "webpack": "^4.41.3"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.9.0"
+  },
+  "scripts": {
+    "start": "webpack-dev-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@gitlab.devtools.parapluie.org:522/schools/ar-courses/tp.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
