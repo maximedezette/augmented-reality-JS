@@ -16,7 +16,7 @@ $(document).ready(function () {
 
     console.log("C'est parti!");
 
-       let  url = "http://api.airvisual.com/v2/nearest_city?lat="+latitude+"&lon="+longitude+"&key=8a027f46-54a7-40a3-a25d-0fb69fdc09cd";
+       let  url = "https://api.airvisual.com/v2/nearest_city?lat="+latitude+"&lon="+longitude+"&key=8a027f46-54a7-40a3-a25d-0fb69fdc09cd";
 
         //Chargement des entités
         $.ajax({
