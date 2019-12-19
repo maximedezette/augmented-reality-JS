@@ -53,13 +53,14 @@ function showInformation(pollution){
 
        let infoDiv = '<div style="background:red;border:3px solid green;width: 300px; height: 200px; " id="html-content">'
     +'C\'est ma div'
+    + apiData['data'].city
     +'</div>'; 
 
     $('#information').append(html);
     $('#information').append(infoDiv);
 
 
-    go();
+    
     console.log('fait!');
 }
 
