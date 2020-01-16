@@ -19,7 +19,7 @@ $(document).ready(function () {
         longitude = position.coords.longitude;
     }
 
-    console.log("C'est parti!");
+    
 
     let url = "https://api.airvisual.com/v2/nearest_city?lat=" + latitude + "&lon=" + longitude + "&key=8a027f46-54a7-40a3-a25d-0fb69fdc09cd";
 
@@ -52,7 +52,7 @@ function showInformation(pollution, cityName) {
     let backgroundDiv;
 
     if (pollution <= seuilDePollution) {
-        image = 'smilley_happy.gltf';
+        image = 'smiley_happy.gltf';
         backgroundDiv = 'green';
     } else {
         image = 'smiley_unhappy.gltf';
@@ -69,7 +69,6 @@ function showInformation(pollution, cityName) {
     $('#information').append(html);
     $('#information').append(infoDiv);
 
-    console.log('fait!');
 }
 
 async function go() {
