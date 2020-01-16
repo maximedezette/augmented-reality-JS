@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>TP AR</title>
+  <title>Rendu de projet AR</title>
     <script src='https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js'></script>
     <script src='./ar.js/aframe/build/aframe-ar.js'></script>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="./html2canvas.js"> </script>
     <script src='script.js'></script>
     <script>
         THREEx.ArToolkitContext.baseURL = './ar.js/three.js/'
@@ -27,13 +28,21 @@
     }
   </style>
 </head>
-<body style=’margin : 0px; overflow: hidden;’>
+<body style='margin : 0px; overflow: hidden;'>
+  <div class="loader"></div>
 <a-scene embedded arjs>
+    <a-assets>
+        <img id="image" src="img.png">
+      </a-assets>
   <a-marker preset="hiro" id="information" >
     <!-- <a-box position='0 0.5 0' material='color: yellow;'></a-box> -->
-
+    <a-image rotation="-90 0 0" src="#image"></a-image>
   </a-marker>
+
   <a-entity camera></a-entity>
+
 </a-scene>
+<!-- <div style="background:red;border:3px solid green;width: 300px; height: 200px; " id="html-content">C'est ma div</div>; -->
+
 </body>
 </html>
