@@ -5,8 +5,13 @@ $(document).ready(function () {
     var latitude;
     var longitude;
     var apiData;
+    var options = {
+        enableHighAccuracy: true,
+        timeout: 5000,
+        maximumAge: 0
+    }
 
-    navigator.geolocation.getCurrentPosition(getLatLon);
+    navigator.geolocation.getCurrentPosition(getLatLon,null,options);
 
     function getLatLon(position) {
 
@@ -47,14 +52,14 @@ function showInformation(pollution, cityName) {
     let backgroundDiv;
 
     if (pollution <= seuilDePollution) {
-        image = 'fire.gltf';
+        image = 'smilley_happy.gltf';
         backgroundDiv = 'green';
     } else {
-        image = 'square.gltf';
+        image = 'smiley_unhappy.gltf';
         backgroundDiv = 'red';
     }
 
-    let html = '<a-asset-item id="fire" src="' + image + '"></a-asset-item><a-entity gltf-model="#fire" scale="0.1 0.1 0.1"></a-entity>';
+    let html = '<a-asset-item id="fire" src="' + image + '"></a-asset-item><a-entity gltf-model="#fire" scale="0.1 0.1 0.1" rotation="90 180 0" position="0.25 1 0.25"></a-entity>';
 
     let infoDiv = '<div style="background:' + backgroundDiv + ';border:3px solid green;width: 300px; height: 200px; " id="html-content">' +
         'Ville: ' + cityName + ' <br/>' +
